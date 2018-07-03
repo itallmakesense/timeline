@@ -11,7 +11,7 @@ app = Sanic()
 
 @app.route('/')
 async def root(request):
-    response = requests.get(f"{IP_API}/{request.ip}")
+    response = requests.get(f"{IP_API}/{request.remote_addr}")
     return json(response.json())
 
 if __name__ == '__main__':
